@@ -229,7 +229,10 @@ where
     /// This is a convenience method that sets oversampling, IIR filter,
     /// and output data rate in sequence.
     pub fn set_sensor_config(&mut self, config: SensorConfig) -> Result<(), Error<E>> {
-        self.set_oversampling(config.pressure_oversampling, config.temperature_oversampling)?;
+        self.set_oversampling(
+            config.pressure_oversampling,
+            config.temperature_oversampling,
+        )?;
         self.set_iir_filter(config.iir_filter)?;
         self.set_output_data_rate(config.output_data_rate)
     }
@@ -352,8 +355,7 @@ where
     /// Read a single byte from a register.
     fn read_register(&mut self, reg: Register) -> Result<u8, Error<E>> {
         let mut buf = [0u8; 1];
-        self.i2c
-            .write_read(self.address, &[reg.addr()], &mut buf)?;
+        self.i2c.write_read(self.address, &[reg.addr()], &mut buf)?;
         Ok(buf[0])
     }
 }

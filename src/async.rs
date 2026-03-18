@@ -206,8 +206,11 @@ where
 
     /// Apply a complete sensor configuration.
     pub async fn set_sensor_config(&mut self, config: SensorConfig) -> Result<(), Error<E>> {
-        self.set_oversampling(config.pressure_oversampling, config.temperature_oversampling)
-            .await?;
+        self.set_oversampling(
+            config.pressure_oversampling,
+            config.temperature_oversampling,
+        )
+        .await?;
         self.set_iir_filter(config.iir_filter).await?;
         self.set_output_data_rate(config.output_data_rate).await
     }

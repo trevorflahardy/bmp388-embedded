@@ -156,17 +156,11 @@ impl CalibrationCoefficients {
         let t3 = t2 * t_lin;
 
         // Offset calculation.
-        let partial_out1 = self.par_p5
-            + self.par_p6 * t_lin
-            + self.par_p7 * t2
-            + self.par_p8 * t3;
+        let partial_out1 = self.par_p5 + self.par_p6 * t_lin + self.par_p7 * t2 + self.par_p8 * t3;
 
         // Sensitivity calculation.
-        let partial_out2 = uncomp
-            * (self.par_p1
-                + self.par_p2 * t_lin
-                + self.par_p3 * t2
-                + self.par_p4 * t3);
+        let partial_out2 =
+            uncomp * (self.par_p1 + self.par_p2 * t_lin + self.par_p3 * t2 + self.par_p4 * t3);
 
         // Second-order correction.
         let uncomp2 = uncomp * uncomp;
