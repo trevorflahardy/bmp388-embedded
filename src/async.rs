@@ -8,7 +8,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! bmp388-embedded = { version = "0.1", features = ["async"] }
+//! bmp388-embedded = { version = "1.0.0", features = ["async"] }
 //! ```
 //!
 //! The async driver provides the same API as the blocking driver, but all

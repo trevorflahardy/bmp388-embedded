@@ -3,9 +3,11 @@
 A platform-agnostic, `no_std` driver for the **BMP388 / BMP390** barometric pressure and temperature sensor, built on the [`embedded-hal`](https://crates.io/crates/embedded-hal) traits.
 
 This implementation is a clean reimplementation based on the existing Rust crate:
+
 - `bmp280-ehal` by Roma Sokolov & Alexander Zhuravlev: <https://github.com/copterust/bmp280>
 
 Compensation formulas are derived from the official Bosch BMP3 Sensor API:
+
 - <https://github.com/boschsensortec/BMP3_SensorAPI>
 
 ## Features
@@ -43,7 +45,7 @@ Enable the feature:
 
 ```toml
 [dependencies]
-bmp388-embedded = { version = "0.1", features = ["async"] }
+bmp388-embedded = { version = "1.0.0", features = ["async"] }
 ```
 
 ```rust,ignore
